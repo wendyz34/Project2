@@ -1,9 +1,21 @@
+import java.util.Scanner;
 public class LinearEquationRunner {
     public static void main(String[]args){
-        int x1 = -1;
-        int y1 = 5;
-        int x2 = 3;
-        int y2 = 10;
+        Scanner scan = new Scanner(System.in);
+        //user should be able to type in each in coordinate form, like this:  (5, -12)
+        System.out.println("Welcome");
+        System.out.println("Enter coordinate 1: ");
+        String coord1 = scan.nextLine();
+        System.out.println("Enter coordinate 2: ");
+        String coord2 = scan.nextLine();
+        String stringx1 = coord1.substring((coord1.indexOf("(" )),(coord1.indexOf(",")));
+        int x1 = Integer.parseInt(stringx1);
+        String stringy1 = coord1.substring((coord1.indexOf("," )),(coord1.indexOf(")")));
+        int y1 = Integer.parseInt(stringy1);
+        String stringx2 = coord1.substring((coord1.indexOf("(" )),(coord1.indexOf(",")));
+        int x2 = Integer.parseInt(stringx2);
+        String stringy2 = coord1.substring((coord1.indexOf("," )),(coord1.indexOf(")")));
+        int y2 = Integer.parseInt(stringy2);//need to be int
         LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
         System.out.println("Equation: " + equation.equation());
         System.out.println("Slope: " + equation.slope());
