@@ -43,6 +43,9 @@ public class LinearEquation {
         return slope;
     }
     public String equation(){
+        if (slope() >1){
+            
+        }
         String equation = "y = " + slope() + "x + " + yIntercept();
         return equation;
     }

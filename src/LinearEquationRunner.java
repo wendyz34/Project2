@@ -8,13 +8,17 @@ public class LinearEquationRunner {
         String coord1 = scan.nextLine();
         System.out.println("Enter coordinate 2: ");
         String coord2 = scan.nextLine();
-        String stringx1 = coord1.substring((coord1.indexOf("(" )),(coord1.indexOf(",")));
+        String stringx1 = coord1.substring(1,(coord1.indexOf(",")));
+        System.out.println(stringx1);
         int x1 = Integer.parseInt(stringx1);
-        String stringy1 = coord1.substring((coord1.indexOf("," )),(coord1.indexOf(")")));
+        String stringy1 = coord1.substring(1,(coord1.indexOf(")")));
+        System.out.println(stringy1);
         int y1 = Integer.parseInt(stringy1);
-        String stringx2 = coord1.substring((coord1.indexOf("(" )),(coord1.indexOf(",")));
+        String stringx2 = coord1.substring(1,(coord1.indexOf(",")));
+        System.out.println(stringx2);
         int x2 = Integer.parseInt(stringx2);
-        String stringy2 = coord1.substring((coord1.indexOf("," )),(coord1.indexOf(")")));
+        String stringy2 = coord1.substring(1,(coord1.indexOf(")")));
+        System.out.println(stringy2);
         int y2 = Integer.parseInt(stringy2);//need to be int
         LinearEquation equation = new LinearEquation(x1, y1, x2, y2);
         System.out.println("Equation: " + equation.equation());
