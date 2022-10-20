@@ -43,6 +43,11 @@ public class LinearEquation {
         return slope;
     }
     public String equation(){
+        if (slope()>0){
+            slope().substring(0)= "-";
+        }else if (slope() = double){
+            slope()= roundedToHundredth(ySlope + "/" +xSlope);
+        }else if ()
         String equation = "y = " + slope() + "x + " + yIntercept();
         return equation;
     }
