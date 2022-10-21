@@ -43,13 +43,30 @@ public class LinearEquation {
         return slope;
     }
     public String equation(){
-        if (slope()>0){
-            slope().substring(0)= "-";
-        }else if (slope() = double){
-            slope()= roundedToHundredth(ySlope + "/" +xSlope);
-        }else if ()
-        String equation = "y = " + slope() + "x + " + yIntercept();
-        return equation;
+        double ySlope=(y2-y1);
+        double xSlope=(x2-x1);
+        double slope = roundedToHundredth(ySlope/xSlope);
+
+         if ((yIntercept()!=0) == false) {
+             String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x";
+             return equation;
+         } else if ((ySlope%2) == 0){
+             String equation = "y = " + slope() + "x + " + yIntercept();
+             return equation;
+        }else if (yIntercept()<0) {
+            String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x" + yIntercept();
+             return equation;
+        }else if ((xSlope<0)){
+            String equation = "y = " + -(y2-y1) + "/" + Math.abs(x2-x1)+ "x + " + yIntercept();
+             return equation;
+        }else {
+            String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x + " + yIntercept();
+             return equation;
+
+        }
+
+
+//check yInter,when if apply to two,10
     }
     public String coordinateForX(double xValue){
         double newY = roundedToHundredth(xValue) * slope() +yIntercept();
@@ -64,7 +81,7 @@ public class LinearEquation {
 
     }
     public String lineInfo(){
-        System.out.println("These two points are: " + "( " + x1 + "," + y1 + ")" +"and" + "( " + x2 + "," + y2 + ")");
+        System.out.println("These two points are: " + "(" + x1 + "," + y1 + ")" +" and " + "(" + x2 + "," + y2 + ")");
         System.out.println("The equation between these two points is: " + equation());
         System.out.println("The slope of this line is: " + slope());
         System.out.println("The y-intercept of the line is: " + yIntercept());
@@ -75,4 +92,3 @@ public class LinearEquation {
     }
 
 }
-
