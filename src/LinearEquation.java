@@ -50,17 +50,29 @@ public class LinearEquation {
         double ySlope=(y2-y1);
         double xSlope=(x2-x1);
         double slope = roundedToHundredth(ySlope/xSlope);
+        if ((xSlope%2 == 0) & (ySlope%2) == 0){
+            String equation = "y = " + (y2 - y1)+ "/" + (x2 - x1) + "x +" + yIntercept();
+            return equation;
+        }
+        if ((yIntercept()!=0) == false) && (slope.length()) {
+            String equation = "y = " + (y2 - y1)/(x2 - x1) + "x";
+            return equation;
 
-         if ((yIntercept()!=0) == false) {
+        }
+        if ((yIntercept()!=0) == false) {
              String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x";
              return equation;
-         }else if ((xSlope<0)){
+         }
+         if ((xSlope<0)){
              String equation = "y = " + -(y2-y1) + "/" + Math.abs(x2-x1)+ "x + " + yIntercept();
              return equation;
-         } else if ((ySlope%2) == 0){
+         }
+         if ((ySlope%2) == 0){
              String equation = "y = " + slope() + "x + " + yIntercept();
              return equation;
-        }else if (yIntercept()<0) {
+        }
+
+         if (yIntercept()<0) {
             String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x" + yIntercept();
              return equation;
 
@@ -71,7 +83,7 @@ public class LinearEquation {
         }
 
 
-//check yInter,4,8
+//yInter,8
     }
     public String coordinateForX(double xValue){
         double newY = roundedToHundredth(xValue) * slope() +yIntercept();
