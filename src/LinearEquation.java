@@ -18,6 +18,10 @@ public class LinearEquation {
 
 
     }
+    public String start(){
+        String start = "Welcome!";
+        return start;
+    }
     public double distance(){
         double x = Math.pow((x2-x1),2);
         double y = Math.pow((y2-y1),2);
@@ -50,15 +54,16 @@ public class LinearEquation {
          if ((yIntercept()!=0) == false) {
              String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x";
              return equation;
+         }else if ((xSlope<0)){
+             String equation = "y = " + -(y2-y1) + "/" + Math.abs(x2-x1)+ "x + " + yIntercept();
+             return equation;
          } else if ((ySlope%2) == 0){
              String equation = "y = " + slope() + "x + " + yIntercept();
              return equation;
         }else if (yIntercept()<0) {
             String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x" + yIntercept();
              return equation;
-        }else if ((xSlope<0)){
-            String equation = "y = " + -(y2-y1) + "/" + Math.abs(x2-x1)+ "x + " + yIntercept();
-             return equation;
+
         }else {
             String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x + " + yIntercept();
              return equation;
@@ -66,7 +71,7 @@ public class LinearEquation {
         }
 
 
-//check yInter,when if apply to two,10
+//check yInter,4,8
     }
     public String coordinateForX(double xValue){
         double newY = roundedToHundredth(xValue) * slope() +yIntercept();
