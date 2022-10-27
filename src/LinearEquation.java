@@ -104,7 +104,7 @@ public class LinearEquation {
         }
 
 
-//yInter,8
+
     }
     public String coordinateForX(double xValue){
         double newY = roundedToHundredth(xValue) * slope() +yIntercept();
