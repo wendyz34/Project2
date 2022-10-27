@@ -12,11 +12,6 @@ public class LinearEquationRunner {
         int x2 = Integer.parseInt(coord2.substring(1,coord2.indexOf(",")));
         int y2 = Integer.parseInt(coord2.substring(coord2.indexOf(" ")+1 ,coord2.indexOf(")")));
         LinearEquation obj= new LinearEquation(x1,y1,x2,y2);
-        /*int x1 = Integer.parseInt(coord1.substring(1,coord2.indexOf(",")));
-        int y1= Integer.parseInt(coord1.substring(coord1.indexOf(" ") + 1 , coord1.indexOf(")")));
-        int x2= Integer.parseInt(coord2.substring(1,coord2.indexOf(",")));
-        int y2= Integer.parseInt(coord2.substring(coord2.indexOf(" ")+1 ,coord2.indexOf(")")));
-        LinearEquation obj= new LinearEquation(x1,y1,x2,y2);*/
         System.out.println(obj.start());
         System.out.println(obj.lineInfo());
         System.out.println();

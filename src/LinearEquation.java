@@ -46,35 +46,56 @@ public class LinearEquation {
         double slope = roundedToHundredth(ySlope/xSlope);
         return slope;
     }
-    public String equation(){
-        double ySlope=(y2-y1);
-        double xSlope=(x2-x1);
-        double slope = roundedToHundredth(ySlope/xSlope);
-        if ((xSlope%2 == 0) & (ySlope%2) == 0){
+    public String equation() {
+        double ySlope = (y2 - y1);
+        double xSlope = (x2 - x1);
+        double slope = roundedToHundredth(ySlope / xSlope);
+        if ((y1==x1)&&(y2==x2)&&(yIntercept()==0)) {
+            String equation = "y = x";
+            return equation;
+        }else if((slope==0)&&(yIntercept()>0)){
+            String equation = "y = " + y1;
+            return equation;
+        }else if((slope==0)&&(yIntercept()<0)){
+            String equation = "y = " + y1;
+            return equation;
+        }else if (slope==1) {
+            String equation = "y = " + "x + " + yIntercept();
+            return equation;
+        }else if (slope==-1) {
+            String equation = "y = " + "-x + " + yIntercept();
+            return equation;
+
+       }else if((yIntercept() ==0)&& (ySlope % xSlope == 0)&&(xSlope<0)){
+            String equation = "y = " + (-(y2 - y1)) / (Math.abs(x2 - x1)) + "x" ;
+            return equation;
+        }else if ((ySlope % xSlope == 0) && (yIntercept() < 0)) {
+            String equation = "y = " + (y2 - y1) / (x2 - x1) + "x" + yIntercept();
+            return equation;
+        }else if ((ySlope % xSlope == 0) && (yIntercept() > 0)) {
+            String equation = "y = " + (y2 - y1) / (x2 - x1) + "x" + "+"+ yIntercept();
+            return equation;
+        }else if (slope<0) {
+            String equation = "y = " + -(y2 - y1) + "/" + Math.abs(x2 - x1) + "x"+ "+" + yIntercept();
+            return equation;
+        }else if((xSlope%2 == 0) & (ySlope%2) == 0){
             String equation = "y = " + (y2 - y1)+ "/" + (x2 - x1) + "x +" + yIntercept();
             return equation;
-        }
-        if ((yIntercept()!=0) == false) && (slope.length()) {
-            String equation = "y = " + (y2 - y1)/(x2 - x1) + "x";
+        } else if((xSlope%2 == 0) & (ySlope%2) == 0){
+            String equation = "y = " + (y2 - y1)+ "/" + (x2 - x1) + "x +" + yIntercept();
             return equation;
-
-        }
-        if ((yIntercept()!=0) == false) {
+        } else if ((yIntercept()!=(0) == false)) {
              String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x";
              return equation;
-         }
-         if ((xSlope<0)){
-             String equation = "y = " + -(y2-y1) + "/" + Math.abs(x2-x1)+ "x + " + yIntercept();
-             return equation;
-         }
-         if ((ySlope%2) == 0){
+         }else if ((ySlope%2) == 0){
              String equation = "y = " + slope() + "x + " + yIntercept();
              return equation;
-        }
-
-         if (yIntercept()<0) {
+        }else if(yIntercept()<0) {
             String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x" + yIntercept();
-             return equation;
+            return equation;
+        }else if((ySlope/xSlope)>0){
+            String equation = "y = " + -(y2 - y1) + "/" + Math.abs(x2 - x1) + "x + " + yIntercept();
+            return equation;
 
         }else {
             String equation = "y = " + (y2 - y1) + "/" + (x2 - x1) + "x + " + yIntercept();
